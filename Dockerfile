@@ -1,6 +1,6 @@
 FROM seleniarm/standalone-chromium:123.0
 
-# 安装OpenJDK 11
+# 安装OpenJDK 11和 node 20
 USER root
 RUN apt-get update && \
     apt-get install -y openjdk-11-jdk curl ca-certificates && \
