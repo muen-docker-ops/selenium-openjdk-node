@@ -14,7 +14,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: "buyfakett/java"
+  IMAGE_NAME: "muen/java"
   IMAGE_TAG: "11-standalone-chrome-123-node20"
 
 jobs:
