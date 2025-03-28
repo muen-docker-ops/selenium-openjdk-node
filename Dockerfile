@@ -3,14 +3,7 @@ FROM selenium/node-chromium:134.0
 # 安装OpenJDK 11和 node 20
 USER root
 RUN apt-get update \
-    && apt-get install -y openjdk-11-jdk curl ca-certificates \
-    && apt-get clean \
-    && rm -rf /tmp/* \
-    && rm -rf /var/log/* \
-    && rm -rf /usr/share/doc/* \
-    && rm -rf /var/cache/* \
-    && rm -rf /var/tmp/* \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get install -y openjdk-11-jdk curl ca-certificates
     
 
 # 设置JAVA_HOME环境变量
