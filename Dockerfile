@@ -2,10 +2,9 @@ FROM selenium/node-chromium:134.0
 
 # 安装OpenJDK 11和 node 20
 USER root
-RUN apt-get update && \
-    apt-get install -y openjdk-11-jdk curl ca-certificates && \
-    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
-    rm -rf /tmp/* \
+RUN apt-get update \
+    && apt-get install -y openjdk-11-jdk curl ca-certificates \
+    && rm -rf /tmp/* \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/log/* \
     && rm -rf /usr/share/doc/* \
