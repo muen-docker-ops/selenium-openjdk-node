@@ -2,7 +2,8 @@ FROM selenium/node-chromium:134.0
 
 # 安装OpenJDK 11和 node 20
 USER root
-RUN apt-get update \
+RUN sed -i '/^deb http/!d' /etc/apt/sources.list \
+    && apt-get update \
     && apt-get install -y openjdk-11-jdk curl ca-certificates
     
 
