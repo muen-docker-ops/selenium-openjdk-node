@@ -1,4 +1,4 @@
-FROM selenium/standalone-chrome:134.0
+FROM selenium/node-chromium:134.0
 
 # 安装OpenJDK 11和 node 20
 USER root
