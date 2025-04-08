@@ -1,4 +1,4 @@
-FROM selenium/node-chromium:134.0
+FROM selenium/standalone-chromium:134.0
 
 # 切换到 root 用户
 USER root
