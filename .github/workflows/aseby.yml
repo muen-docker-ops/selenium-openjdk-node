@@ -6,7 +6,7 @@
 # Multi-platform image with GitHub Actions
 # https://docs.docker.com/build/ci/github-actions/multi-platform/
 
-name: Docker Publish
+name: aseby
 
 on:
   push:
@@ -43,6 +43,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
+          file: ./Dockerfile.aseby
           platforms: linux/arm64,linux/amd64
           push: true
           tags: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
