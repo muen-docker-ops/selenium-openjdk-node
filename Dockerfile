@@ -25,7 +25,13 @@ RUN rm -f /etc/apt/sources.list.d/ubuntu.sources && \
     apt-get install -y --no-install-recommends nodejs && \
     # 清理缓存
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf \
+    /tmp/* \
+    /usr/share/doc/* \
+    /var/cache/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/* \
+    /var/log/*
 
 # 独立的 ENV 指令
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
