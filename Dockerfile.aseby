@@ -17,6 +17,7 @@ RUN rm -f /etc/apt/sources.list.d/ubuntu.sources && \
       fonts-sil-abyssinica \
       fonts-noto-core \
       fonts-noto-extra && \
+    apt-get install -y --no-install-recommends ffmpeg && \
     # 生成埃塞俄比亚语言环境
     sed -i '/^# *\(am_ET.UTF-8\|ti_ET.UTF-8\) UTF-8/s/^# *//' /etc/locale.gen && \
     locale-gen && \

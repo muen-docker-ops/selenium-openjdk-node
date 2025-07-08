@@ -17,6 +17,7 @@ RUN rm -f /etc/apt/sources.list.d/ubuntu.sources && \
       fonts-sil-abyssinica \
       fonts-noto-core \
       fonts-noto-extra && \
+    apt-get install -y --no-install-recommends ffmpeg && \
     # 生成 Assamese（阿萨姆语）语言环境
     sed -i '/^# *as_IN.UTF-8/s/^# *//' /etc/locale.gen && \
     locale-gen && \

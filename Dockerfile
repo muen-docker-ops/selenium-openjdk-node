@@ -9,6 +9,7 @@ RUN rm -f /etc/apt/sources.list.d/ubuntu.sources && \
     dpkg-divert --remove /lib32 || true && \
     apt-get update && \
     apt-get install -y --no-install-recommends openjdk-11-jdk curl ca-certificates && \
+    apt-get install -y --no-install-recommends ffmpeg && \
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y --no-install-recommends nodejs && \
     apt-get clean && \
