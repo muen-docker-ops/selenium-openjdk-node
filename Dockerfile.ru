@@ -10,7 +10,7 @@ RUN rm -f /etc/apt/sources.list.d/ubuntu.sources && \
     dpkg-divert --remove /lib64 || true && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
-      openjdk-11-jdk \
+      openjdk-21-jdk \
       curl \
       ca-certificates \
       locales \
@@ -35,5 +35,5 @@ RUN rm -f /etc/apt/sources.list.d/ubuntu.sources && \
     /var/log/*
 
 # 独立的 ENV 指令
-ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 ENV PATH="$JAVA_HOME/bin:$PATH"

@@ -15,7 +15,7 @@ on:
 
 env:
   IMAGE_NAME: "muen/java"
-  IMAGE_TAG: "11-standalone-chrome-134-ru"
+  IMAGE_TAG: "21-standalone-chrome-134-ru"
 
 jobs:
   docker:
