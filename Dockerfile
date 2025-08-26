@@ -6,7 +6,10 @@ USER root
 # 修复 base-files 安装问题并安装 OpenJDK 21 和 Node.js 20
 RUN rm -f /etc/apt/sources.list.d/ubuntu.sources && \
     sed -i '/^deb http/!d' /etc/apt/sources.list && \
+    # 同时移除 /lib32、/libo32、/lib64 的 diversion，避免 base-files 冲突
     dpkg-divert --remove /lib32 || true && \
+    dpkg-divert --remove /libo32 || true && \
+    dpkg-divert --remove /lib64 || true && \
     apt-get update && \
     apt-get install -y --no-install-recommends openjdk-21-jdk curl ca-certificates && \
     apt-get install -y --no-install-recommends ffmpeg && \
