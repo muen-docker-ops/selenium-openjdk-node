@@ -12,15 +12,17 @@ RUN rm -f /etc/apt/sources.list.d/ubuntu.sources && \
     apt-get install -y --no-install-recommends \
       openjdk-21-jdk \
       curl \
-      ca-certificates \
-      locales \
-      fonts-sil-abyssinica \
-      fonts-noto-core \
-      fonts-noto-extra && \
+      ca-certificates && \
     apt-get install -y --no-install-recommends ffmpeg && \
     # 生成 Assamese（阿萨姆语）语言环境
-    sed -i '/^# *as_IN.UTF-8/s/^# *//' /etc/locale.gen && \
-    locale-gen && \
+    apt-get install -y --no-install-recommends \
+        locales \
+        locales-all \
+        fonts-sil-abyssinica \
+        fonts-noto-core \
+        fonts-noto-extra && \
+    locale-gen as_IN.UTF-8 && \
+    update-locale LANG=as_IN.UTF-8 && \
     # 安装 Node.js 20
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y --no-install-recommends nodejs && \

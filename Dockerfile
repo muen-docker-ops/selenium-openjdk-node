@@ -10,6 +10,12 @@ RUN rm -f /etc/apt/sources.list.d/ubuntu.sources && \
     apt-get update && \
     apt-get install -y --no-install-recommends openjdk-21-jdk curl ca-certificates && \
     apt-get install -y --no-install-recommends ffmpeg && \
+    apt-get install -y --no-install-recommends \
+        locales \
+        locales-all \
+        fonts-sil-abyssinica \
+        fonts-noto-core \
+        fonts-noto-extra && \
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y --no-install-recommends nodejs && \
     apt-get clean && \
