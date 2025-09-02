@@ -6,7 +6,7 @@
 # Multi-platform image with GitHub Actions
 # https://docs.docker.com/build/ci/github-actions/multi-platform/
 
-name: ru
+name: common
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
 
 env:
   IMAGE_NAME: "muen/java"
-  IMAGE_TAG: "21-standalone-chrome-134-ru"
+  IMAGE_TAG: "21-standalone-chrome-132"
 
 jobs:
   docker:
@@ -43,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Dockerfile.ru
+          file: ./Dockerfile.132
           platforms: linux/arm64,linux/amd64
           push: true
           tags: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
