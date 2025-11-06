@@ -21,6 +21,7 @@ RUN rm -f /etc/apt/sources.list.d/ubuntu.sources && \
         fonts-noto-extra && \
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y --no-install-recommends nodejs && \
+    mkdir /var/log/supervisor/ && \
     apt-get clean && \
     rm -rf \
     /tmp/* \
