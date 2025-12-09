@@ -34,3 +34,8 @@ RUN rm -f /etc/apt/sources.list.d/ubuntu.sources && \
 # 设置 JAVA_HOME 环境变量
 ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 ENV PATH="$JAVA_HOME/bin:$PATH"
+
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
+CMD ["/start.sh"]
