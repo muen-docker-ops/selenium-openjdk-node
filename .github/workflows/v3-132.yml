@@ -15,7 +15,7 @@ on:
 
 env:
   IMAGE_NAME: "muen/java"
-  IMAGE_TAG: "21-standalone-chrome-132"
+  BASE_IMAGE_TAG: "21-standalone-chrome-132"
 
 jobs:
   docker:
@@ -25,7 +25,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2           
+        uses: docker/setup-buildx-action@v2            
+      - name: Generate date tag
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y%m%d')"
 
       - name: Docker meta
         id: meta
@@ -46,4 +49,4 @@ jobs:
           file: ./Dockerfile-132
           platforms: linux/arm64,linux/amd64
           push: true
-          tags: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+          tags: ${{ env.IMAGE_NAME }}:${{ env.BASE_IMAGE_TAG }}-${{ steps.date.outputs.date }}
