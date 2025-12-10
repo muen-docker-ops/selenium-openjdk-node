@@ -13,6 +13,7 @@ echo "Java Command: $JAVA_CMD"
 
 # ====== 1. 启动你的 Java 应用（日志输出到控制台） ======
 echo "Starting Java App..."
+cd /app
 if [ -f "/app/$APPNAME-$VERSION.jar" ];then
     sh -c "$JAVA_CMD" &
 fi

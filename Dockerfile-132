@@ -38,4 +38,5 @@ ENV PATH="$JAVA_HOME/bin:$PATH"
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
-CMD ["/start.sh"]
+WORKDIR /app
+ENTRYPOINT ["/start.sh"]
